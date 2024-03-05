@@ -23,6 +23,10 @@ module.exports = {
     "eslint-comments/disable-enable-pair": "off",
     /** We specify default props in props decomposition */
     "react/require-default-props": "off",
+    /** This is no longer needed since React 17 */
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+
     "lodash/prefer-noop": "off",
     "pii/no-phone-number": "off",
     "xss/no-mixed-html": "off",

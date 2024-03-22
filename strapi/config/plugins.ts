@@ -1,11 +1,11 @@
+import graphqlConfig from './plugins.graphql.config'
+import meilisearchConfig from './plugins.meilisearch.config'
+
 export default {
   graphql: {
-    config: {
-      defaultLimit: 100,
-      playgroundAlways: true,
-      apolloServer: {
-        introspection: true,
-      },
-    },
+    config: graphqlConfig,
   },
-};
+  meilisearch: {
+    config: meilisearchConfig,
+  },
+}

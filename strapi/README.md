@@ -1,72 +1,46 @@
-# Strapi CMS
+# 🚀 Strapi
 
-## 🧰 Local Setup
+## Setup
 
-Before you start, install all dependencies and create `.env.local` file which is .gitignored used for local dev
+Before you start, install all dependencies and create `.env.local` file which is .gitignored and used for local dev.
 
 ```
 yarn
 cp .env.example .env.local
 ```
 
-You need postgres running locally (with correct credentials & database available). The default setup is in `.env.example`, you can override any of the variables by passing them in you `.env.local` file.
+You need postgres running locally (with correct credentials & database available). The easiest way to get a postgres db with the right credentials up&running is via `docker-compose.yml` file. Check the readme in the root of this repo.
 
-If you need to quickly setup postgres see the readme and the docker-compose file in the root of the project.
+## Build
 
-## 🚀 Development
+Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
-Start the development server:
+```
+yarn build
+```
 
-```bash
+## Start development server
+
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+
+```
 yarn dev
 ```
 
-## ☁️ Deployment Setup (Secrets)
+## Start server
 
-You need to generate secrets for each environment. Use the [k8-helpers](https://github.com/bratislava/k8-helpers) repo and the files in `kubernetes/base/secrets` to guide you.
-
-When prompted, apply the secrets to given environment. You shouldn't need to add them to kustomize (they are already referenced there).
-
-You'll need to end up with the following files inside said folder:
+Start your Strapi application with autoReload disabled (not needed for development). [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
 ```
-database.secret.dev.yml
-database.secret.prod.yml
-database.secret.staging.yml
-database.yml (not used, kept for reference)
-strapi.secret.dev.yml
-strapi.secret.prod.yml
-strapi.secret.staging.yml
-strapi.yml (not used, kept for reference)
+yarn start
 ```
 
-Most of the secrets can be generated using the
-`@b64randX` or `@randX` directives (see k8-helpers README). The only exceptions are the `APP_KEYS`, which need to be 4 random, comma separated base64 strings, encoded in base64 again. To generate these, you can use the following (and paste them into the interactive prompt of k8-helpers afterwards):
+## Set permissions
 
-```bash
-echo APP_KEYS: $(openssl rand -base64 32),$(openssl rand -base64 32),$(openssl rand -base64 32),$(openssl rand -base64 32)
-```
+To allow graphql queries, you need to give access to Public role:
 
-## Deployment
+Open Strapi admin panel, go to Settings > USERS & PERMISSIONS PLUGIN > Roles > Public. Check `find` and `findOne` for all content types.
 
-To get automatic deployments on `master` branch, uncomment the relevant section in deploy.yml.
+## [project-specific docs]
 
-Github pipelines will take care of deploying to correct environment based on tags. To deploy create a tag with the following prefix:
-
-```base
-dev*
-staging*
-prod*
-```
-
-Good practice is to use semver as suffix.
-
-## Patches
-
-We use [patch-package](https://github.com/ds300/patch-package) to slightly change the behavior of some packages. See the `patches` folder for more details.
-
-When updating these packages, please run also `patch-package`:
-
-```
-yarn patch-package @strapi/plugin-users-permissions
-```
+[Add your project-specific docs for strapi here.]

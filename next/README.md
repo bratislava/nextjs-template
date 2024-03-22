@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next
 
-## Getting Started
+This readme should get you up & running.
 
-First, run the development server:
+## First-time setup
+
+To install dependencies run:
+
+```
+yarn
+```
+
+For CMS setup see `strapi` directory. You can also run the project against staging or production strapi (useful when developing and debugging) - provided that you're not working on Strapi model changes.
+
+## Run project locally
+
+```
+yarn dev
+```
+
+## Generate GraphQL
+
+When you change something in Strapi Content type builder, and/or if you change GraphQL queries, you always need to generate new types using Strapi SKD. To update queries, modify files in `services/graphql` directory.
+
+> Note: Strapi V4 does not export schema.graphql by default - instead, you'll need a running server to generate types from graphql endpoint. The Strapi url is set up directly in `codege.yml` file.
+
+To generate new types run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn gen
 ```
+
+For more information, refer to [the documentation](/docs/libs/Strapi-SDK.md).
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Static Site Generation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you want to test static site generation locally, you need to run `yarn build` and `yarn start`. This commands run by default with the prod env variable, so in order to have the local env variable for strapi, you need to create `.env.local` with `STRAPI_URL=localhost:1337` to override the prod values. This file is ignored by git, because it often contains sensitive secrets.

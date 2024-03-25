@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Strapi CMS for Bratislava template app",
-  "license": "MIT",
+  "license": "EPL-2.0",
   "author": {
-    "name": "A Strapi developer"
+    "name": "City of Bratislava"
   },
   "scripts": {
     "build": "strapi build",
@@ -16,15 +16,15 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "4.20.3",
-    "@strapi/plugin-i18n": "4.20.3",
-    "@strapi/plugin-users-permissions": "4.20.3",
-    "@strapi/strapi": "4.20.3",
+    "@strapi/plugin-graphql": "4.21.0",
+    "@strapi/plugin-i18n": "4.21.0",
+    "@strapi/plugin-users-permissions": "4.21.0",
+    "@strapi/strapi": "4.21.0",
     "patch-package": "^6.5.1",
-    "pg": "^8.10.0",
+    "pg": "^8.11.3",
     "postinstall-postinstall": "^2.1.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "5.3.4",
     "strapi-provider-upload-ts-minio": "^3.1.0",
     "styled-components": "5.3.3"

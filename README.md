@@ -12,6 +12,11 @@ Copy the template repo and change the following:
 - update envs in `strapi/kubernetes/base/.env`
   - `DATABASE_HOST=template-strapi-database`
   - `MINIO_BUCKET=template-strapi`
+    - this is used in `strapi/config/env/production/plugins.js`
+
+What is set up manually (this is WIP list):
+- `strapi/config/env/production/plugins.ts` - upload provider is set to minio
+- custom `strapi::security` middleware is added to `strapi/config/middleware.js`
 
 After changing all of this, remove "How to use this template" part from readme.
 

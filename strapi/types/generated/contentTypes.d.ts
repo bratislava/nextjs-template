@@ -610,7 +610,7 @@ export interface PluginUsersPermissionsRole extends Schema.CollectionType {
 export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   collectionName: 'up_users'
   info: {
-    name: 'user'
+    name: 'User'
     description: ''
     singularName: 'user'
     pluralName: 'users'
@@ -618,7 +618,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   }
   options: {
     draftAndPublish: false
-    timestamps: true
+  }
+  pluginOptions: {
+    'content-manager': {
+      visible: false
+    }
   }
   attributes: {
     username: Attribute.String &
@@ -647,6 +651,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >
+    picture: Attribute.Media
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     createdBy: Attribute.Relation<'plugin::users-permissions.user', 'oneToOne', 'admin::user'> &

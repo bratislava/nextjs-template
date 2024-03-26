@@ -1,16 +1,14 @@
 {
-  "kind": "collectionType",
   "collectionName": "up_users",
   "info": {
-    "name": "user",
+    "name": "User",
     "description": "",
     "singularName": "user",
     "pluralName": "users",
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "content-manager": {
@@ -39,17 +37,20 @@
       "type": "password",
       "minLength": 6,
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "resetPasswordToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmationToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmed": {
       "type": "boolean",
@@ -68,11 +69,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "posts": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::blog-post.blog-post",
-      "mappedBy": "author"
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false
     }
   }
 }

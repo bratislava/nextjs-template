@@ -19,7 +19,7 @@ What is set up manually (this is WIP list):
 - custom `strapi::security` middleware is added to `strapi/config/middleware.js`
 - custom `app.ts` in `strapi/src/admin` - add SK language to admin panel, disable tutorials and release notifications
 - custom schema for User content type added as extention in `strapi/src/extensions/users-permissions/content-types/user/schema.json` to hide Users from admin panel
-    - only change is adding `pluginOptions.content-manager.visible: false`
+    - the base is the original shema file from strapi repo, only change is adding `pluginOptions.content-manager.visible: false`
 - env `STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE=sk` to set default strapi content locale to SK
     - in `strapi/env.example` and `strapi/kubernetes/base/.env`
     - docs: https://docs.strapi.io/dev-docs/plugins/i18n#configuration-of-the-default-locale

@@ -700,6 +700,7 @@ type UsersPermissionsUser {
   confirmed: Boolean
   createdAt: DateTime
   email: String!
+  picture: UploadFileEntityResponse
   provider: String
   role: UsersPermissionsRoleEntityResponse
   updatedAt: DateTime
@@ -744,6 +745,7 @@ input UsersPermissionsUserInput {
   confirmed: Boolean
   email: String
   password: String
+  picture: ID
   provider: String
   resetPasswordToken: String
   role: ID

@@ -5,3 +5,19 @@ fragment PageEntity on PageEntity {
     slug
   }
 }
+
+query Pages {
+  pages {
+    data {
+      ...PageEntity
+    }
+  }
+}
+
+query PageBySlug($slug: String!) {
+  pages(filters: { slug: { eq: $slug } }) {
+    data {
+      ...PageEntity
+    }
+  }
+}

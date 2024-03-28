@@ -927,16 +927,68 @@ export type UsersPermissionsUserRelationResponseCollection = {
 
 export type PageEntityFragment = {
   __typename?: 'PageEntity'
+  id?: string | null
   attributes?: { __typename?: 'Page'; title: string; slug: string } | null
+}
+
+export type PagesQueryVariables = Exact<{ [key: string]: never }>
+
+export type PagesQuery = {
+  __typename?: 'Query'
+  pages?: {
+    __typename?: 'PageEntityResponseCollection'
+    data: Array<{
+      __typename?: 'PageEntity'
+      id?: string | null
+      attributes?: { __typename?: 'Page'; title: string; slug: string } | null
+    }>
+  } | null
+}
+
+export type PageBySlugQueryVariables = Exact<{
+  slug: Scalars['String']['input']
+}>
+
+export type PageBySlugQuery = {
+  __typename?: 'Query'
+  pages?: {
+    __typename?: 'PageEntityResponseCollection'
+    data: Array<{
+      __typename?: 'PageEntity'
+      id?: string | null
+      attributes?: { __typename?: 'Page'; title: string; slug: string } | null
+    }>
+  } | null
 }
 
 export const PageEntityFragmentDoc = gql`
   fragment PageEntity on PageEntity {
+    id
     attributes {
       title
       slug
     }
   }
+`
+export const PagesDocument = gql`
+  query Pages {
+    pages {
+      data {
+        ...PageEntity
+      }
+    }
+  }
+  ${PageEntityFragmentDoc}
+`
+export const PageBySlugDocument = gql`
+  query PageBySlug($slug: String!) {
+    pages(filters: { slug: { eq: $slug } }) {
+      data {
+        ...PageEntity
+      }
+    }
+  }
+  ${PageEntityFragmentDoc}
 `
 
 export type SdkFunctionWrapper = <T>(
@@ -950,6 +1002,37 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
   action()
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
-  return {}
+  return {
+    Pages(
+      variables?: PagesQueryVariables,
+      requestHeaders?: GraphQLClientRequestHeaders,
+    ): Promise<PagesQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<PagesQuery>(PagesDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        'Pages',
+        'query',
+        variables,
+      )
+    },
+    PageBySlug(
+      variables: PageBySlugQueryVariables,
+      requestHeaders?: GraphQLClientRequestHeaders,
+    ): Promise<PageBySlugQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<PageBySlugQuery>(PageBySlugDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        'PageBySlug',
+        'query',
+        variables,
+      )
+    },
+  }
 }
 export type Sdk = ReturnType<typeof getSdk>

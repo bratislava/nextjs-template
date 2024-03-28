@@ -5,16 +5,24 @@
   "license": "EPL-2.0",
   "scripts": {
     "dev": "next dev",
+    "develop": "yarn dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc",
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "gen": "graphql-codegen && prettier --write ./src/services/graphql/index.ts"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -48,6 +56,7 @@
     "eslint-plugin-switch-case": "^1.1.2",
     "eslint-plugin-unicorn": "^50.0.1",
     "eslint-plugin-xss": "^0.1.12",
+    "graphql": "^16.8.1",
     "postcss": "^8",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",

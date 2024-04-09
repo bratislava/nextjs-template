@@ -32,6 +32,9 @@ What is set up manually (this is WIP list):
     - `yarn add graphql graphql-request graphql-tag`
     - `yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-graphql-request`
     - add script `yarn gen`
+- `next/prettierrc.js` - added `prettier-plugin-tailwindcss` according to [Additional setup for Frontend projects
+  ](https://bratislava.github.io/eslint-and-prettier#additional-setup-for-frontend-projects) in our docs
+- `next/package.json` scripts according to [our docs](https://bratislava.github.io/eslint-and-prettier#installation-and-setup)
 
 After changing all of this, remove "How to use this template" part from readme.
 

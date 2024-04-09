@@ -10,7 +10,9 @@
     "start": "next start",
     "typecheck": "tsc",
     "lint": "next lint",
+    "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
     "gen": "graphql-codegen && prettier --write ./src/services/graphql/index.ts"
   },
   "dependencies": {

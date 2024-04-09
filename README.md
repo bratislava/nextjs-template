@@ -14,7 +14,10 @@ Copy the template repo and change the following:
 - update envs in `strapi/kubernetes/base/.env`
   - `DATABASE_HOST=template-strapi-database`
   - `MINIO_BUCKET=template-strapi` - this is used in `strapi/config/env/production/plugins.js`
-
+- add envs in bratiska-cli env files `.env.bratiska-cli-build.*`
+  - `STRAPI_URL`
+  - `NEXT_PUBLIC_MEILISEARCH_SEARCH_API_KEY`
+  - `NEXT_PUBLIC_MEILISEARCH_HOST`
 
 What is set up manually (this is WIP list):
 - `strapi/config/env/production/plugins.ts` - upload provider is set to minio

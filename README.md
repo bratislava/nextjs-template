@@ -3,16 +3,21 @@
 ## How to use this template
 
 Copy the template repo and change the following:
+- the main title of this README.md
 - `name` in `package.json` for both `strapi` and `next` - this will be used by deploy pipeline
   - `"name": "template-strapi"` in `strapi/package.json`
   - `"name": "template-next"` in `next/package.json`
-- generate secrets and change the secrets name in `strapi/kubernetes/base/secrets`
+- `description` in `strapi/package.json`
+- - generate secrets and change the secrets name in `strapi/kubernetes/base/secrets`
   - `template-strapi-database-secret` in `strapi/kubernetes/base/secrets/database.yml`
   - `template-strapi-internals-secret` in `strapi/kubernetes/base/secrets/strapi.yml`
 - update envs in `strapi/kubernetes/base/.env`
   - `DATABASE_HOST=template-strapi-database`
-  - `MINIO_BUCKET=template-strapi`
-    - this is used in `strapi/config/env/production/plugins.js`
+  - `MINIO_BUCKET=template-strapi` - this is used in `strapi/config/env/production/plugins.js`
+- add envs in bratiska-cli env files `.env.bratiska-cli-build.*`
+  - `STRAPI_URL`
+  - `NEXT_PUBLIC_MEILISEARCH_SEARCH_API_KEY`
+  - `NEXT_PUBLIC_MEILISEARCH_HOST`
 
 What is set up manually (this is WIP list):
 - `strapi/config/env/production/plugins.ts` - upload provider is set to minio
@@ -23,6 +28,10 @@ What is set up manually (this is WIP list):
 - env `STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE=sk` to set default strapi content locale to SK
     - in `strapi/env.example` and `strapi/kubernetes/base/.env`
     - docs: https://docs.strapi.io/dev-docs/plugins/i18n#configuration-of-the-default-locale
+- `codegen.ts`
+    - `yarn add graphql graphql-request graphql-tag`
+    - `yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-graphql-request`
+    - add script `yarn gen`
 
 After changing all of this, remove "How to use this template" part from readme.
 

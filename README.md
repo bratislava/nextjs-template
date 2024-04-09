@@ -12,7 +12,7 @@ Copy the template repo and change the following:
   - `template-strapi-database-secret` in `strapi/kubernetes/base/secrets/database.yml`
   - `template-strapi-internals-secret` in `strapi/kubernetes/base/secrets/strapi.yml`
 - update envs in `strapi/kubernetes/base/.env`
-  - `DATABASE_HOST=template-database`
+  - `DATABASE_HOST=template-strapi-database`
   - `MINIO_BUCKET=template-strapi` - this is used in `strapi/config/env/production/plugins.js`
 
 

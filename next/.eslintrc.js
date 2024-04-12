@@ -3,7 +3,6 @@ module.exports = {
     'auto',
     'plugin:@next/next/recommended',
     'plugin:@tanstack/eslint-plugin-query/recommended',
-    'plugin:storybook/recommended',
   ],
   rules: {
     /** Named export is easier to refactor automatically */

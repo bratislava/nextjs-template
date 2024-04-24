@@ -4,7 +4,6 @@ on:
     branches:
       - master
 jobs:
-
   conditions:
     name: Check for build conditions
     uses: bratislava/github-actions/.github/workflows/build-conditions.yml@stable

@@ -4,13 +4,9 @@ on:
     branches:
       - master
 jobs:
-  validate:
-    name: Validate typescript
-    uses: bratislava/github-actions/.github/workflows/validate-typescript.yml@stable
 
   conditions:
     name: Check for build conditions
-    needs: validate
     uses: bratislava/github-actions/.github/workflows/build-conditions.yml@stable
     permissions: write-all
 

@@ -12,6 +12,8 @@ jobs:
   validate:
     name: Validate typescript
     uses: bratislava/github-actions/.github/workflows/validate-typescript-inhouse.yml@stable
+    with:
+      directory: next/
 
   conditions:
     name: Check for cluster conditions

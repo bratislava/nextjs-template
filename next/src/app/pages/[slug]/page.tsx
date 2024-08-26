@@ -12,6 +12,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const page = await getPage(slug)
 
   if (!page || !page.attributes) {
+    // eslint-disable-next-line i18next/no-literal-string
     return <div>Page not found</div>
   }
 

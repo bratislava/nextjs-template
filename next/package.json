@@ -16,11 +16,13 @@
     "prettier:check": "prettier --check .",
     "gen": "graphql-codegen && prettier --write ./src/services/graphql/index.ts",
     "update-i18next": "yarn add next-i18next@latest react-i18next@latest i18next@latest -E && yarn add eslint-plugin-i18next@latest -D -E",
+    "update-next": "yarn add next@latest react@latest react-dom@latest sharp@latest -E && yarn add @types/react@latest @types/react-dom@latest eslint-config-next@latest typescript@latest -D -E",
     "update-react-aria": "yarn add @internationalized/date@latest react-aria@latest react-aria-components@latest react-stately@latest tailwindcss-react-aria-components -E",
-    "update-next": "yarn add next@latest react@latest react-dom@latest sharp@latest -E && yarn add @types/react@latest @types/react-dom@latest eslint-config-next@latest typescript@latest -D -E"
+    "update-tailwind": "yarn add clsx@latest tailwind-merge@latest tailwind-scrollbar-hide@latest -E && yarn add tailwindcss@latest autoprefixer@latest postcss@latest prettier-plugin-tailwindcss@latest eslint-plugin-tailwindcss@latest -D -E"
   },
   "dependencies": {
     "@internationalized/date": "3.5.5",
+    "clsx": "2.1.1",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "graphql-tag": "^2.12.6",
@@ -34,6 +36,8 @@
     "react-i18next": "15.0.1",
     "react-stately": "3.32.2",
     "sharp": "0.33.5",
+    "tailwind-merge": "2.5.2",
+    "tailwind-scrollbar-hide": "1.1.7",
     "tailwindcss-react-aria-components": "1.1.5"
   },
   "devDependencies": {
@@ -46,7 +50,7 @@
     "@types/react": "18.3.4",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "10.4.20",
     "eslint": "^8",
     "eslint-config-adjunct": "^4.12.2",
     "eslint-config-airbnb": "^19.0.4",
@@ -74,12 +78,13 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-switch-case": "^1.1.2",
+    "eslint-plugin-tailwindcss": "3.17.4",
     "eslint-plugin-unicorn": "^50.0.1",
     "eslint-plugin-xss": "^0.1.12",
-    "postcss": "^8",
+    "postcss": "8.4.41",
     "prettier": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.3.0",
+    "prettier-plugin-tailwindcss": "0.6.6",
+    "tailwindcss": "3.4.10",
     "typescript": "5.5.4"
   },
   "volta": {

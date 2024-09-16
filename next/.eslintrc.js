@@ -2,6 +2,8 @@ module.exports = {
   extends: [
     'auto',
     'plugin:@next/next/recommended',
+    'plugin:i18next/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:@tanstack/eslint-plugin-query/recommended',
   ],
   rules: {

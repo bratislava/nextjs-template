@@ -3,6 +3,7 @@
 ## How to use this template
 
 Copy the template repo and change the following:
+
 - the main title of this README.md
 - `name` in `package.json` for both `strapi` and `next` - this will be used by deploy pipeline
   - `"name": "template-strapi"` in `strapi/package.json`
@@ -15,23 +16,24 @@ Copy the template repo and change the following:
   - `DATABASE_HOST=template-strapi-database`
   - `MINIO_BUCKET=template-strapi` - this is used in `strapi/config/env/production/plugins.js`
 - add envs in bratiska-cli env files `.env.bratiska-cli-build.*`
-  - `STRAPI_URL`
+  - `NEXT_PUBLIC_STRAPI_URL`
   - `NEXT_PUBLIC_MEILISEARCH_SEARCH_API_KEY`
   - `NEXT_PUBLIC_MEILISEARCH_HOST`
 
 What is set up manually (this is WIP list):
+
 - `strapi/config/env/production/plugins.ts` - upload provider is set to minio
 - custom `strapi::security` middleware is added to `strapi/config/middleware.js`
 - custom `app.ts` in `strapi/src/admin` - add SK language to admin panel, disable tutorials and release notifications
 - custom schema for User content type added as extention in `strapi/src/extensions/users-permissions/content-types/user/schema.json` to hide Users from admin panel
-    - the base is the original shema file from strapi repo, only change is adding `pluginOptions.content-manager.visible: false`
+  - the base is the original shema file from strapi repo, only change is adding `pluginOptions.content-manager.visible: false`
 - env `STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE=sk` to set default strapi content locale to SK
-    - in `strapi/env.example` and `strapi/kubernetes/base/.env`
-    - docs: https://docs.strapi.io/dev-docs/plugins/i18n#configuration-of-the-default-locale
+  - in `strapi/env.example` and `strapi/kubernetes/base/.env`
+  - docs: https://docs.strapi.io/dev-docs/plugins/i18n#configuration-of-the-default-locale
 - `codegen.ts`
-    - `yarn add graphql graphql-request graphql-tag`
-    - `yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-graphql-request`
-    - add script `yarn gen`
+  - `yarn add graphql graphql-request graphql-tag`
+  - `yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-graphql-request`
+  - add script `yarn gen`
 - `next/prettierrc.js` - added `prettier-plugin-tailwindcss` according to [Additional setup for Frontend projects
   ](https://bratislava.github.io/eslint-and-prettier#additional-setup-for-frontend-projects) in our docs
 - `next/package.json` scripts according to [our docs](https://bratislava.github.io/eslint-and-prettier#installation-and-setup)
@@ -88,4 +90,5 @@ curl --request GET \
 Then use "Default Admin API Key" for strapi in `strapi/.env.local` as `MEILISEARCH_ADMIN_API_KEY` and "Default Search API Key" in `next/.env.local` file as `NEXT_PUBLIC_MEILISEARCH_SEARCH_API_KEY`.
 
 ## Stay in touch
+
 [https://inovacie.bratislava.sk/](https://inovacie.bratislava.sk/)

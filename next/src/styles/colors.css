@@ -1,0 +1,39 @@
+:root {
+  /*
+      These variables are used in different pages and component to override
+      colors of different things. They are defined as RGB values on purpose
+      so they can be used in `rgb(var(--color-main-600))` style or with transparency
+      as `rgba(var(--color-main-600), 0.25)`.
+    */
+
+  /* Bratislava main red */
+  --color-main-800: 147 37 27; /*#93251B*/
+  --color-main-700: 216 55 40; /*#D83728*/
+  --color-main-600: 224 95 83; /*#E05F53*/
+  --color-main-500: 238 147 139; /*#EE938B*/
+  --color-main-400: 239 175 169; /*#EFAFA9*/
+  --color-main-300: 243 195 191; /*#F3C3BF*/
+  --color-main-200: 247 215 212; /*#F7D7D4*/
+  --color-main-100: 251 235 234; /*#FBEBEA*/
+
+  /* Brand color */
+  --color-brand-800: 0 0 0; /* TODO */
+  --color-brand-700: 0 0 0; /* TODO */
+  --color-brand-600: 0 0 0; /* TODO */
+  --color-brand-500: 0 0 0; /* TODO */
+  --color-brand-400: 0 0 0; /* TODO */
+  --color-brand-300: 0 0 0; /* TODO */
+  --color-brand-200: 0 0 0; /* TODO */
+  --color-brand-100: 0 0 0; /* TODO */
+
+  --color-grey-800: 34 31 29; /*#221F1D*/
+  --color-grey-700: 45 41 38; /*#2D2926*/
+  --color-grey-600: 66 62 60; /*#423E3C*/
+  --color-grey-500: 87 84 81; /*#575451*/
+  --color-grey-400: 150 148 147; /*#969493*/
+  --color-grey-300: 171 169 168; /*#ABA9A8*/
+  --color-grey-200: 213 212 212; /*#D5D4D4*/
+  --color-grey-100: 238 238 238; /*#EEEEEE*/
+  /*--color-grey-50: 245 245 245; !*#F5F5F5*!*/
+  --color-grey-0: 255 255 255; /*#FFFFFF*/
+}

@@ -1,0 +1,74 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import 'colors.css';
+
+/* Docs: https://tailwindcss.com/docs/functions-and-directives */
+/* @layer base {
+  @font-face {
+    font-family: 'Frutiger';
+    font-weight: 300;
+    src: url('../../public/fonts/FrutigerLTPro-Light.otf');
+  }
+  @font-face {
+    font-family: 'Frutiger';
+    font-weight: 400;
+    src: url('../../public/fonts/FrutigerLTPro-Roman.otf');
+  }
+  @font-face {
+    font-family: 'Frutiger';
+    font-weight: 700;
+    src: url('../../public/fonts/FrutigerLTPro-Bold.otf');
+  }
+  @font-face {
+    font-family: 'Frutiger';
+    font-weight: 800;
+    src: url('../../public/fonts/FrutigerLTPro-Black.otf');
+  }
+
+  body {
+    @apply text-content-primary antialiased;
+    font-family: 'Frutiger', 'Inter', sans-serif;
+  }
+} */
+
+/* @layer components {
+  .negative-x-spacing {
+    @apply -mx-4 px-4;
+  }
+
+  .text-button {
+    @apply text-size-button-default lg:text-size-button-large;
+  }
+
+  .chevron-down-animate {
+    @apply transform transition duration-300 ease-in-out;
+  }
+
+  .rotate-menu-trigger[data-state='open'] > .chevron-down-animate {
+    @apply rotate-180;
+  }
+} */
+
+/* Remove arrows from input type='number' */
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Remove native Safari arrows in accordions  */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}

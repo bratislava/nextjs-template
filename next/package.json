@@ -14,7 +14,7 @@
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "gen": "graphql-codegen && prettier --write ./src/services/graphql/index.ts",
+    "gen": "graphql-codegen && prettier --write ./src/services/graphql/api.ts",
     "update-i18next": "yarn add next-i18next@latest react-i18next@latest i18next@latest -E && yarn add eslint-plugin-i18next@latest -D -E",
     "update-next": "yarn add next@latest react@latest react-dom@latest sharp@latest -E && yarn add @types/react@latest @types/react-dom@latest eslint-config-next@latest typescript@latest -D -E",
     "update-react-aria": "yarn add @internationalized/date@latest react-aria@latest react-aria-components@latest react-stately@latest tailwindcss-react-aria-components -E",

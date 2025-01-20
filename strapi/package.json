@@ -16,11 +16,11 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "4.21.0",
-    "@strapi/plugin-i18n": "4.21.0",
-    "@strapi/plugin-users-permissions": "4.21.0",
-    "@strapi/strapi": "4.21.0",
-    "patch-package": "^6.5.1",
+    "@strapi/plugin-graphql": "4.25.14",
+    "@strapi/plugin-i18n": "4.25.14",
+    "@strapi/plugin-users-permissions": "4.25.14",
+    "@strapi/strapi": "4.25.14",
+    "patch-package": "^8.0.0",
     "pg": "^8.11.3",
     "postinstall-postinstall": "^2.1.0",
     "react": "^18.2.0",

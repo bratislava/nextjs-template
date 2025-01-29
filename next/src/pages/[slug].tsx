@@ -1,6 +1,4 @@
-import React from 'react'
-
-import { client } from '@/services/graphql/gql'
+import { client } from '@/src/services/graphql'
 
 const getPage = async (slug: string) => {
   const { pages } = await client.PageBySlug({ slug })

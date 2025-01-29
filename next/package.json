@@ -14,13 +14,14 @@
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "gen": "graphql-codegen && prettier --write ./src/services/graphql/index.ts",
+    "gen": "graphql-codegen && prettier --write ./src/services/graphql/api.ts",
     "update-i18next": "yarn add next-i18next@latest react-i18next@latest i18next@latest -E && yarn add eslint-plugin-i18next@latest -D -E",
     "update-next": "yarn add next@latest react@latest react-dom@latest sharp@latest -E && yarn add @types/react@latest @types/react-dom@latest eslint-config-next@latest typescript@latest -D -E",
     "update-react-aria": "yarn add @internationalized/date@latest react-aria@latest react-aria-components@latest react-stately@latest tailwindcss-react-aria-components -E",
     "update-tailwind": "yarn add clsx@latest tailwind-merge@latest tailwind-scrollbar-hide@latest -E && yarn add tailwindcss@latest autoprefixer@latest postcss@latest prettier-plugin-tailwindcss@latest eslint-plugin-tailwindcss@latest -D -E"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
     "@internationalized/date": "3.5.5",
     "clsx": "2.1.1",
     "graphql": "^16.8.1",
@@ -41,7 +42,6 @@
     "tailwindcss-react-aria-components": "1.1.5"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/typescript": "^4.0.6",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@graphql-codegen/typescript-operations": "^4.2.0",

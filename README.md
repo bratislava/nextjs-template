@@ -2,25 +2,23 @@
 
 ## How to use this template
 
-Copy the template repo and change the following:
+**Initial setup:** Copy the template repo and change the following:
 
-- the main title of this README.md
-- `name` in `package.json` for both `strapi` and `next` - this will be used by deploy pipeline
-  - `"name": "template-strapi"` in `strapi/package.json`
-  - `"name": "template-next"` in `next/package.json`
-- `description` in `strapi/package.json`
-- - generate secrets and change the secrets name in `strapi/kubernetes/base/secrets`
+- update the main title of this README.md
+- update `package.json` for both `strapi` and `next` - this will be used by deploy pipeline
+  - `"name":` in `strapi/package.json`
+  - `"name":` in `next/package.json`
+  - `"description": ` in `strapi/package.json`
+- generate secrets and change the secrets name in `strapi/kubernetes/base/secrets`
   - `template-strapi-database-secret` in `strapi/kubernetes/base/secrets/database.yml`
   - `template-strapi-internals-secret` in `strapi/kubernetes/base/secrets/strapi.yml`
 - update envs in `strapi/kubernetes/base/.env`
   - `DATABASE_HOST=template-strapi-database`
-  - `MINIO_BUCKET=template-strapi` - this is used in `strapi/config/env/production/plugins.js`
-- add envs in bratiska-cli env files `.env.bratiska-cli-build.*`
-  - `NEXT_PUBLIC_STRAPI_URL`
-  - `NEXT_PUBLIC_MEILISEARCH_SEARCH_API_KEY`
-  - `NEXT_PUBLIC_MEILISEARCH_HOST`
+  - `MINIO_BUCKET=template-strapi` (this is used in `strapi/config/env/production/plugins.js`)
+- update bratiska-cli env files `.env.bratiska-cli-build.*` - add actual values instead of TODO
+- remove this *How to use this template* section
 
-What is set up manually (this is WIP list):
+What was added on top of the base next-strapi template:
 
 - `strapi/config/env/production/plugins.ts` - upload provider is set to minio
 - custom `strapi::security` middleware is added to `strapi/config/middleware.js`
@@ -30,7 +28,7 @@ What is set up manually (this is WIP list):
 - env `STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE=sk` to set default strapi content locale to SK
   - in `strapi/env.example` and `strapi/kubernetes/base/.env`
   - docs: https://docs.strapi.io/dev-docs/plugins/i18n#configuration-of-the-default-locale
-- `codegen.ts`
+- `codegen.ts` for graphql
   - `yarn add graphql graphql-request graphql-tag`
   - `yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-graphql-request`
   - add script `yarn gen`
@@ -38,15 +36,11 @@ What is set up manually (this is WIP list):
   ](https://bratislava.github.io/eslint-and-prettier#additional-setup-for-frontend-projects) in our docs
 - `next/package.json` scripts according to [our docs](https://bratislava.github.io/eslint-and-prettier#installation-and-setup)
 
-After changing all of this, remove "How to use this template" part from readme.
-
 ## Introduction
 
 This project is led by the [Department of Innovation and Technology of the City of Bratislava](https://inovacie.bratislava.sk). We’re making it entirely open-source as we believe this promotes [savings, collaboration, auditability and innovation](https://publiccode.eu) in the public sector.
 
-Our goal is to be transparent about services we’re developing and providing, as well as to invite other cities and municipalities to build on top of the same or similar open-source technologies we’ve already tested and used - to foster an ecosystem of collaboration between teams facing similar challenges. We’ll be happy to [get in touch.](mailto:innovationteam@bratislava.sk)
-
-We intend to make many more of our projects open-source by the end of 2022 - stay tuned!
+Our goal is to be transparent about services we’re developing and providing, as well as to invite other cities and municipalities to build on top of the same or similar open-source technologies we’ve already tested and used - to foster an ecosystem of collaboration between teams facing similar challenges. We’ll be happy to [get in touch](mailto:innovationteam@bratislava.sk).
 
 > If you are an individual or a company who’d like to take part in these efforts, collaborate closely on development or report an issue, we’d love to hear from you! 🙌 Contact us using this repository or at [innovationteam@bratislava.sk](mailto:innovationteam@bratislava.sk)
 

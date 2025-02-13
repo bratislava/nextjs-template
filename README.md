@@ -4,7 +4,7 @@
 
 **Initial setup:** Copy the template repo and change the following:
 
-- update the main title of this README.md, as well as README.md in `strapi` and `next`
+- update the main title of this README.md
 - update `package.json` for both `strapi` and `next` - this will be used by deploy pipeline
   - `"name":` in `strapi/package.json`
   - `"name":` in `next/package.json`

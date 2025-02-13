@@ -1,4 +1,4 @@
-# [your-project-name] Strapi CMS
+# Strapi
 
 ## First-time setup
 
@@ -8,7 +8,7 @@ Before you start, install dependencies with
 yarn
 ```
 
-Create `.env.local` file based on the contents of `.env.example`. This file should be .gitignored and is used for local dev.
+Create `.env.local` file based on `.env.example`. The `.env.local` file is used for local dev and should be .gitignored.
 
 ```
 cp .env.example .env.local

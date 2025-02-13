@@ -1,9 +1,6 @@
 import { client } from '@/src/services/graphql'
 
 const getPage = async (slug: string) => {
-  // TODO Remove this return when implementing the page - fetching from Strapi needs staging envs, so it would crash the build needlessly
-  return null
-
   const { pages } = await client.PageBySlug({ slug })
 
   return pages?.data[0] ?? null
